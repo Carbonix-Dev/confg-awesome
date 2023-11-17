@@ -187,7 +187,7 @@ return gears.table.join(
     { modkey },
     "#23",
     function()
-      awful.spawn("rofi -show window -theme ~/.config/rofi/window.rasi")
+      awful.spawn("rofi -show window -theme ~/.config/rofi/window.rasi -window-format {t}")
     end,
     { descripton = "Window switcher", group = "Applications" }
   ),
@@ -195,7 +195,7 @@ return gears.table.join(
     { "Mod1" },
     "#23",
     function()
-      awful.spawn("rofi -show window -theme ~/.config/rofi/window.rasi")
+      awful.spawn("rofi -show window -theme ~/.config/rofi/window.rasi -window-format {t}")
     end,
     { descripton = "Window switcher", group = "Applications" }
   ),
@@ -262,19 +262,10 @@ return gears.table.join(
     {},
     "XF86MonBrightnessUp",
     function(c)
-      --awful.spawn("xbacklight -time 100 -inc 1%+")
-      awful.spawn.easy_async_with_shell(
-        "pkexec xfpm-power-backlight-helper --get-brightness",
-        function(stdout)
-          -- awful.spawn.easy_async_with_shell("pkexec xfpm-power-backlight-helper --set-brightness " .. tostring(tonumber(stdout) + BACKLIGHT_SEPS), function(stdou2)
-          
-          -- end)
-          awful.spawn("xbacklight -time 150 -inc 1%+")
-          awesome.emit_signal("module::brightness_osd:show", true)
-          awesome.emit_signal("module::brightness_slider:update")
-          awesome.emit_signal("widget::brightness_osd:rerun")
-        end
-      )
+        awful.spawn("xbacklight -time 150 -inc 1%+")
+        awesome.emit_signal("module::brightness_osd:show", true)
+        awesome.emit_signal("module::brightness_slider:update")
+        awesome.emit_signal("widget::brightness_osd:rerun")
     end,
     { description = "Raise backlight brightness", group = "System" }
   ),
@@ -282,18 +273,10 @@ return gears.table.join(
     {},
     "XF86MonBrightnessDown",
     function(c)
-      awful.spawn.easy_async_with_shell(
-        "pkexec xfpm-power-backlight-helper --get-brightness",
-        function(stdout)
-          -- awful.spawn.easy_async_with_shell("pkexec xfpm-power-backlight-helper --set-brightness " .. tostring(tonumber(stdout) - BACKLIGHT_SEPS), function(stdout2)
-
-          -- end)
-          awful.spawn("xbacklight -time 150 -dec 1%+")
-          awesome.emit_signal("module::brightness_osd:show", true)
-          awesome.emit_signal("module::brightness_slider:update")
-          awesome.emit_signal("widget::brightness_osd:rerun")
-        end
-      )
+        awful.spawn("xbacklight -time 150 -dec 1%+")
+        awesome.emit_signal("module::brightness_osd:show", true)
+        awesome.emit_signal("module::brightness_slider:update")
+        awesome.emit_signal("widget::brightness_osd:rerun")
     end,
     { description = "Lower backlight brightness", group = "System" }
   ),

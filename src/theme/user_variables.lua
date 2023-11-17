@@ -7,9 +7,8 @@ local home = os.getenv("HOME")
 
 -- If you want different default programs, wallpaper path or modkey; edit this file.
 user_vars = {
-  -- Use a privacy respecting server, or the server owners will be able to know when the user logs in
-  uptime_server = '127.0.0.1',
-
+  uptime_server = "127.0.0.1",
+  
   -- Autotiling layouts
   layouts = {},
 
@@ -18,10 +17,10 @@ user_vars = {
 
   -- Write the terminal command to start anything here
   autostart = {
-    "xfce4-power-manager",
+    --"xfce4-power-manager",
     "emote; killall emote; sleep 1; emote",
     --"xfdesktop --class=xfdesktop --name=xfdesktop",
-    "light-locker --lock-on-suspend --lock-on-lid &",
+    --"light-locker --lock-on-suspend --lock-on-lid &",
     
     -- "xrandr --output HDMI-1 --primary --mode 1920x1080 --rate 60.00 --output HDMI-1-3 --mode 1920x1080 --rate 60.00 --right-of HDMI-1",
     "picom",

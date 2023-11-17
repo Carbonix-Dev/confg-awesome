@@ -1,1 +1,1 @@
-WaterfoxLxterminaldde-file-managerSteam;waterfox;Machine,;jetbrains-idea;Cherrytree;Imager;
+WaterfoxLxterminaldde-file-managerSteam;waterfox;Machine,;jetbrains-idea;Cherrytree;Imager;kitty;VirtualBox;

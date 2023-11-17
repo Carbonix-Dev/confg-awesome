@@ -6,7 +6,7 @@ config = '.config/awesome/'
 dir = config + 'src/assets/backgrounds/'
 logdir = config + 'src/scripts/background.d.log'
 
-refresh_rate_min = 1  # The refresh rate, in minutes
+refresh_rate_min = 10  # The refresh rate, in minutes
 refresh_rate_sec = 0   # The refresh rate, in seconds
 
 while True:

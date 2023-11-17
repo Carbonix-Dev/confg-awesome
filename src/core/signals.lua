@@ -9,7 +9,7 @@ screen.connect_signal(
   "added",
   function()
     awful.spawn([[ killall onedrive_tray ]])
-    awesome.reboot()
+    awesome.restart()
   end
 )
 
@@ -17,7 +17,7 @@ screen.connect_signal(
   "removed",
   function()
     awful.spawn([[ killall onedrive_tray ]])
-    awesome.reboot()
+    awesome.restart()
   end
 )
 
